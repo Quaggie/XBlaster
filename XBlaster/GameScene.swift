@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     let playerLayerNode = SKNode()
     let hudLayerNode = SKNode()
+    let bulletLayerNode = SKNode()
     
     let scoreLabel = SKLabelNode(fontNamed: "Edit Undo Line BRK")
     var scoreFlashAction: SKAction!
@@ -25,6 +26,10 @@ class GameScene: SKScene {
     let playableRect: CGRect
     let hudHeight: CGFloat = 90
     var deltaPoint = CGPoint.zero
+    
+    var bulletInterval: TimeInterval = 0
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -58,6 +63,26 @@ class GameScene: SKScene {
         
         playerShip.position = newPoint
         deltaPoint = .zero
+        
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        } else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        
+        bulletInterval += dt
+        if bulletInterval > 0.15 {
+            bulletInterval = 0
+            
+            let bullet = Bullet(entityPosition: playerShip.position)
+            addChild(bullet)
+            
+            let moveBulletAction = SKAction.moveBy(x: 0, y: size.height, duration: 1.0)
+            let removeBulletAction = SKAction.removeFromParent()
+            let bulletAction = SKAction.sequence([moveBulletAction, removeBulletAction])
+            bullet.run(bulletAction)
+        }
     }
 }
 
@@ -77,9 +102,11 @@ extension GameScene {
     func setupSceneLayers() {
         playerLayerNode.zPosition = 50
         hudLayerNode.zPosition = 100
+        bulletLayerNode.zPosition = 25
         
         addChild(playerLayerNode)
         addChild(hudLayerNode)
+        addChild(bulletLayerNode)
     }
     
     func setupUI() {

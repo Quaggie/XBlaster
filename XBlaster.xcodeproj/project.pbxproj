@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E00B66181F16A74A0032BFCE /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00B66171F16A74A0032BFCE /* Entity.swift */; };
 		E00B661A1F16A80B0032BFCE /* PlayerShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00B66191F16A80B0032BFCE /* PlayerShip.swift */; };
+		E00B661C1F16B43F0032BFCE /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00B661B1F16B43F0032BFCE /* Bullet.swift */; };
 		E0C79EBE1F1669DE006A7BA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C79EBD1F1669DE006A7BA5 /* AppDelegate.swift */; };
 		E0C79EC21F1669DE006A7BA5 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0C79EC11F1669DE006A7BA5 /* Actions.sks */; };
 		E0C79EC41F1669DE006A7BA5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C79EC31F1669DE006A7BA5 /* GameScene.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		E00B66171F16A74A0032BFCE /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		E00B66191F16A80B0032BFCE /* PlayerShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerShip.swift; sourceTree = "<group>"; };
+		E00B661B1F16B43F0032BFCE /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 		E0C79EBA1F1669DE006A7BA5 /* XBlaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XBlaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0C79EBD1F1669DE006A7BA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0C79EC11F1669DE006A7BA5 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				E00B66171F16A74A0032BFCE /* Entity.swift */,
 				E00B66191F16A80B0032BFCE /* PlayerShip.swift */,
+				E00B661B1F16B43F0032BFCE /* Bullet.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				E0C79EFE1F167979006A7BA5 /* CGFloat+Extensions.swift in Sources */,
 				E0C79F091F167979006A7BA5 /* Vector3.swift in Sources */,
 				E0C79EBE1F1669DE006A7BA5 /* AppDelegate.swift in Sources */,
+				E00B661C1F16B43F0032BFCE /* Bullet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

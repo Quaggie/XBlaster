@@ -24,7 +24,7 @@ class PlayerShip: Entity {
         
         struct SharedTexture {
             static var texture = SKTexture()
-            static var onceToken = "0"
+            static var onceToken = "playerShip"
         }
         
         DispatchQueue.once(token: SharedTexture.onceToken) {
